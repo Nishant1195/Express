@@ -7,10 +7,10 @@ const app = express();
 const staticPath = path.join(import.meta.dirname, "public");
 app.use("/",express.static(staticPath))
 
-// app.get("/", (req, res) => {
-//    const homepage = path.join(import.meta.dirname, "public", "index.html")
-//    res.sendFile(homepage);
-// })
+app.get("/profile/:userid", (req, res) => {
+   console.log(req.params);
+   res.send(req.params);
+})
 
 app.get("/logo", (req, res) => {
    const homepage = path.join(import.meta.dirname, "public", "image.jpeg");
