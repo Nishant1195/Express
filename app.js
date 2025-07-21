@@ -7,9 +7,10 @@ const app = express();
 const staticPath = path.join(import.meta.dirname, "public");
 app.use("/",express.static(staticPath))
 
-app.get("/profile/:userid", (req, res) => {
+app.get("/profile/:username/article/:slug", (req, res) => {
    console.log(req.params);
-   res.send(`<h1>My name is ${req.params.userid}<h1>`);
+   const formatedSlug = req.params.slug.replace("-", " ");
+   res.send(`<h1>My name is ${req.params.username} and my article is ${formatedSlug}<h1>`);
 })
 
 app.get("/logo", (req, res) => {
