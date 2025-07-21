@@ -4,6 +4,9 @@ import path from "path";
 
 const app = express();
 
+const staticPath = path.join(import.meta.dirname, "public");
+app.use(express.static(staticPath))
+
 app.get("/", (req, res) => {
    const homepage = path.join(import.meta.dirname, "public", "index.html")
    res.sendFile(homepage);
