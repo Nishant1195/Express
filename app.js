@@ -9,6 +9,11 @@ app.get("/", (req, res) => {
    res.sendFile(homepage);
 })
 
+app.get("/logo", (req, res) => {
+   const homepage = path.join(import.meta.dirname, "public", "image.jpeg");
+   res.sendFile(homepage);
+})
+
 
 
 app.listen(PORT, () => {
