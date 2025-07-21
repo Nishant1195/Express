@@ -1,0 +1,16 @@
+import express from 'express';
+import {PORT} from "./env.js";
+import path from "path";
+
+const app = express();
+
+app.get("/", (req, res) => {
+   const homepage = path.join(import.meta.dirname, "public", "index.html")
+   res.sendFile(homepage);
+})
+
+
+
+app.listen(PORT, () => {
+    console.log(`Your server with port ${PORT} is running!`);
+})
