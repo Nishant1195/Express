@@ -23,7 +23,10 @@ app.get("/product", (req,res) => {
     res.send(`Searched product is ${req.query.search} & ${req.query.result}`);
 })
 
-
+app.get("/message", (req, res) => {
+    console.log(req.query);
+    res.send("Hi")
+})
 
 app.listen(PORT, () => {
     console.log(`Your server with port ${PORT} is running!`);
