@@ -35,6 +35,10 @@ app.post("/message", (req, res) => {
     res.redirect("/");
 })
 
+app.use((req,res) => {
+    res.status(404).sendFile(path.join(import.meta.dirname, "views",  "404.html"));
+})
+
 app.listen(PORT, () => {
     console.log(`Your server with port ${PORT} is running!`);
 })
