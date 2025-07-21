@@ -20,7 +20,7 @@ app.get("/logo", (req, res) => {
 
 app.get("/product", (req,res) => {
     console.log(req.query);
-    res.send(`Searched product is ${req.query.search}`);
+    res.send(`Searched product is ${req.query.search} & ${req.query.result}`);
 })
 
 
