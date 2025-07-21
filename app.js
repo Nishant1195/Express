@@ -9,7 +9,7 @@ app.use("/",express.static(staticPath))
 
 app.get("/profile/:userid", (req, res) => {
    console.log(req.params);
-   res.send(req.params);
+   res.send(`<h1>My name is ${req.params.userid}<h1>`);
 })
 
 app.get("/logo", (req, res) => {
