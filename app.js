@@ -25,7 +25,7 @@ app.get("/product", (req,res) => {
 
 app.get("/message", (req, res) => {
     console.log(req.query);
-    res.send("Hi")
+    res.redirect("/");
 })
 
 app.listen(PORT, () => {
