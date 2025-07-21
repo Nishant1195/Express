@@ -18,6 +18,11 @@ app.get("/logo", (req, res) => {
    res.sendFile(homepage);
 })
 
+app.get("/product", (req,res) => {
+    console.log(req.query);
+    res.send(`Searched product is ${req.query.search}`);
+})
+
 
 
 app.listen(PORT, () => {
