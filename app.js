@@ -1,6 +1,7 @@
 import express from 'express';
 import {PORT} from "./env.js";
 import path from "path";
+import { log } from 'console';
 
 const app = express();
 
@@ -23,8 +24,14 @@ app.get("/product", (req,res) => {
     res.send(`Searched product is ${req.query.search} & ${req.query.result}`);
 })
 
-app.get("/message", (req, res) => {
-    console.log(req.query);
+// app.get("/message", (req, res) => {
+//     console.log(req.query);
+//     res.redirect("/");
+// })
+app.use(express.urlencoded({extended:true}));
+
+app.post("/message", (req, res) => {
+    console.log(req.body);
     res.redirect("/");
 })
 
